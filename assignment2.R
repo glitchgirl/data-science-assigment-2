@@ -1,0 +1,6 @@
+rm(list=ls())
+library(Hmisc)
+data <- read.csv("~/Desktop/repos/data-science-assigment-2/COVID19_line_list_data.csv")
+describe(data)
+data$death_dummy <- as.integer(data$death != 0)
+sum(data$death_dummy) /nrow(data)
